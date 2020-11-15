@@ -2,7 +2,7 @@ body {
   margin: 0;
   background-color: #000;
   color: #282828;
-  font-size: .9rem;
+  font-size: 1rem;
   font-family: "Raleway";
 }
 
@@ -14,7 +14,6 @@ h1, h2, h3, h4, h5 {
   font-family: "Poppins";
   font-weight: 800;
   color: #282828;
-  margin-top: 2rem;
 }
 
 h2 {
@@ -33,10 +32,6 @@ p {
   margin-bottom: 0rem;
 }
 
-section {
-  margin-bottom: 3rem;
-}
-
 .d-none {
   display: none;
 }
@@ -52,7 +47,7 @@ section {
   background-color: #F98012;
   border-bottom: solid 2px #F98012;
   color: #383838;
-  padding-bottom: 3rem;
+  padding: 1rem 1.5rem;
 }
 
 #header a {
@@ -62,22 +57,23 @@ section {
 #header img {
   border-radius: 50%;
   margin: 2rem auto 0;
-  width: 200px;
-  height: 200px;
+  width: 150px;
 }
 
 #header h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 0;
+  margin-top: 1rem;
 }
 
 #header .tagline {
-  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+  margin-top: 0;
 }
 
 #header .contact {
   font-size: .8rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 #header .header-link {
@@ -90,16 +86,12 @@ section {
   display: none;
 }
 
-#experience h2 {
-  margin-top: 2rem;
-}
-
 #content .leftcol {
   padding: 1rem 1rem 0 2rem;
 }
 
 #content .rightcol {
-  padding: 2rem;
+  padding: 1rem;
   background-color: #f9f0e8;
 }
 
@@ -109,7 +101,7 @@ section {
 }
 
 .employer-wrapper .position {
-  margin: 2rem 0 .3rem .3rem;
+  margin: 1rem 0 .3rem .3rem;
 }
 
 @media (min-width: 768px) {
@@ -118,6 +110,9 @@ section {
   }
   h1, h2, h3, h4, h5 {
     margin-top: 0;
+  }
+  li {
+    font-size: .9rem;
   }
   .resume-wrapper {
     width: 8.5in;
@@ -137,10 +132,9 @@ section {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    padding: 1rem 1.5rem;
   }
   #header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   #header h1, #header .tagline {
     white-space: nowrap;
@@ -166,11 +160,11 @@ section {
         grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
     height: 100%;
   }
-  #content .rightcol {
-    padding: 1rem;
-  }
   #content .position {
     margin-top: .5rem;
+  }
+  #experience h2 {
+    margin-top: 1rem;
   }
 }
 
