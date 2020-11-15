@@ -13,6 +13,7 @@ $header-font: 'Poppins';
 $body-font : 'Raleway';
 
 body{
+    margin:0;
     background-color: $body-background;
     color: $body-text-color;
     font-size:.9rem;
@@ -24,49 +25,48 @@ h1, h2, h3, h4, h5 {
     font-family: $header-font;
     font-weight:800;
     color: $h-color;
+    margin-top: 2rem;
 }
 h2{font-size: 1.2rem;}
 h3{font-size: 1.1rem;}
 h4{font-size: 1rem;}
 p{margin-bottom: 0rem;}
 
+section{margin-bottom: 3rem;}
 
 .d-none{display:none;}
 
 .resume-wrapper{
-    width: 8.5in;
-    height: 11in;
-    overflow:hidden;
-    margin: 1rem auto;
+    display:block;
+    width:100%;
     background-color: $paper-color;
-    box-shadow: 10px 10px 10px;
 }
 
 #header{
-    display:flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 1.5rem 1.5rem .75rem;
+    text-align: center;
     background-color:$header-bg;
     border-bottom: solid 2px $border-color;
     color: #383838;
+    padding-bottom: 3rem;
 
     a{
         color: $body-text-color;
     }
     img{
-        float:left;
         border-radius: 50%;
-        margin-right:1rem;
+        margin:2rem auto 0;
+        width:200px;
+        height:200px;
     }
 
-    h1, .tagline{
-        white-space: nowrap;
-        margin:0;
+    h1{
+        font-size: 3rem;
+        margin-bottom: 0;
     }
+    .tagline{margin-bottom: 2.5rem;}
     .contact{
-        text-align:right;
         font-size: .8rem;
+        margin-top: 1rem;
     }
     address{
 
@@ -76,21 +76,16 @@ p{margin-bottom: 0rem;}
         margin-left:1rem;
         padding:.1rem 0;
 
-        &.linkedin{display:inline-block;}
     }
     .resume{display:none;}
 }
 
 #experience h2{margin-top: 2rem;}
 #content{
-    display:grid;
-    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
-    height:100%;
-
     .leftcol{
-        padding: 0 1rem 0 2rem;}
+        padding: 1rem 1rem 0 2rem;}
     .rightcol{
-        padding: 0 2rem 0 1rem;
+        padding: 2rem;
         background-color: $sidebar-bg;
     }
 }
@@ -101,13 +96,56 @@ p{margin-bottom: 0rem;}
         margin-bottom: .4rem
     }
     .position{
-        margin: .3rem 0 .3rem .3rem;
+        margin: 2rem 0 .3rem .3rem;
 
     }
     .time{
         // margin-top:.2rem;
     }
     .description{}
+}
+
+@media (min-width: 768px) {
+    section{margin-bottom: 0;}
+    h1, h2, h3, h4, h5{margin-top:0;}
+    .resume-wrapper{
+        width: 8.5in;
+        height: 11in;
+        overflow:hidden;
+        margin: 1rem auto;
+        box-shadow: 10px 10px 10px;
+    }
+    #header{
+        display:flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding:1rem 1.5rem;
+
+        h1{font-size: 2rem;}
+        h1, .tagline{
+            white-space: nowrap;
+            margin:0;
+        }
+        .left{text-align:left;}
+        img{
+            float:left;
+            margin: 0 1rem 0 0;
+            width:auto; 
+            height: auto;
+        }
+        .contact{
+            margin-top: 0;
+            text-align:right;
+        }
+    }
+    #content{
+        display:grid;
+        grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+		height:100%;
+		.rightcol{padding: 1rem;}
+		.position{margin-top: .5rem;}
+    }
+
 }
 
 @media print{
