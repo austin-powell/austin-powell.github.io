@@ -84,11 +84,15 @@ p {
 #header .header-link {
   display: block;
   margin-left: 1rem;
-  padding: 0;
+  padding: .1rem 0;
 }
 
-#header .header-link.linkedin, #header .header-link.resume {
+#header .header-link.linkedin {
   display: inline-block;
+}
+
+#header .resume {
+  display: none;
 }
 
 #experience h2 {
@@ -134,10 +138,12 @@ p {
   }
   a {
     color: #282828;
-    text-decoration: none;
   }
-  .resume, .linkedin {
+  .linkedin {
     display: none !important;
+  }
+  #header .resume {
+    display: block;
   }
 }
 /*# sourceMappingURL=styles.css.map */
