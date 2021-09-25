@@ -7,13 +7,13 @@ body {
 }
 
 a {
-  color: #337ab7;
+  color: #2638C4;
 }
 
 h1, h2, h3, h4, h5 {
   font-family: "Poppins";
   font-weight: 800;
-  color: #282828;
+  color: #0f1e8c;
 }
 
 h2 {
@@ -44,14 +44,10 @@ p {
 
 #header {
   text-align: center;
-  background-color: #F98012;
-  border-bottom: solid 2px #F98012;
-  color: #383838;
+  background-color: #2638C4;
+  border-bottom: solid 2px #0A145A;
+  color: #ffffff !important;
   padding: 1rem 1.5rem;
-}
-
-#header a {
-  color: #282828;
 }
 
 #header img {
@@ -60,10 +56,15 @@ p {
   width: 150px;
 }
 
+#header a {
+  color: #ffffff;
+}
+
 #header h1 {
   font-size: 2rem;
   margin-bottom: 0;
   margin-top: 1rem;
+  color: #ffffff;
 }
 
 #header .tagline {
@@ -92,7 +93,7 @@ p {
 
 #content .rightcol {
   padding: 1rem;
-  background-color: #f9f0e8;
+  background-color: #eef0f5;
 }
 
 .employer-wrapper .employer {
@@ -161,7 +162,7 @@ p {
     height: 100%;
   }
   #content .position {
-    margin-top: .5rem;
+    margin-top: 0;
   }
   #experience h2 {
     margin-top: 1rem;
@@ -169,8 +170,13 @@ p {
 }
 
 @media print {
+  * {
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
   body {
     background-color: transparent;
+    font-size: .95rem;
   }
   .resume-wrapper {
     width: 100%;
@@ -178,6 +184,17 @@ p {
     margin: 0;
     -webkit-box-shadow: none;
             box-shadow: none;
+  }
+  #content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: minmax(0, 3fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    height: 100%;
+    height: auto;
+  }
+  #content .position {
+    margin-top: 0;
   }
   a {
     color: #282828;
@@ -187,6 +204,37 @@ p {
   }
   #header .resume {
     display: block;
+  }
+  #header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  #header h1 {
+    font-size: 1.8rem;
+  }
+  #header h1, #header .tagline {
+    white-space: nowrap;
+    margin: 0;
+  }
+  #header .left {
+    text-align: left;
+  }
+  #header img {
+    float: left;
+    margin: 0 1rem 0 0;
+    width: auto;
+    height: auto;
+  }
+  #header .contact {
+    margin-top: 0;
+    text-align: right;
   }
 }
 /*# sourceMappingURL=styles.css.map */

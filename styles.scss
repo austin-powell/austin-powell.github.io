@@ -2,15 +2,51 @@ $body-background : #000;;
 
 $paper-color: #ffffff;
 $body-text-color: #282828;
-$link-color: #337ab7;
-$header-bg: #F98012;
-$h-color: #282828;
-$border-color: #F98012;
-$sidebar-bg: #f9f0e8;
+$link-color: #2638C4;
+$header-bg: #2638C4;
+$header-text-color: #ffffff;
+$h-color: #0f1e8c;
+$border-color: #0A145A;
+$sidebar-bg: #eef0f5;
 
 
 $header-font: 'Poppins';
 $body-font : 'Raleway';
+
+
+@mixin wide-print-header {
+    #header{
+        display:flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        h1{font-size: 1.8rem;}
+        h1, .tagline{
+            white-space: nowrap;
+            margin:0;
+        }
+        .left{text-align:left;}
+        img{
+            float:left;
+            margin: 0 1rem 0 0;
+            width:auto; 
+            height: auto;
+        }
+        .contact{
+            margin-top: 0;
+            text-align:right;
+        }
+    }
+}
+@mixin two-columns{
+    display:grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    height:100%;
+    .position{ 
+        margin-top: 0;
+    }
+}
+
 
 body{
     margin:0;
@@ -43,22 +79,22 @@ p{margin-bottom: 0rem;}
     text-align: center;
     background-color:$header-bg;
     border-bottom: solid 2px $border-color;
-    color: #383838;
+    color: $header-text-color !important;
     padding:1rem 1.5rem;
 
-    a{
-        color: $body-text-color;
-    }
     img{
         border-radius: 50%;
         margin:2rem auto 0;
         width:150px;
     }
 
+    a {color: $header-text-color;}
+
     h1{
         font-size: 2rem;
 		margin-bottom: 0;
-		margin-top: 1rem;
+        margin-top: 1rem;
+        color: $header-text-color;
     }
     .tagline{
 		font-size: 1.2rem;
@@ -113,54 +149,32 @@ p{margin-bottom: 0rem;}
         margin: 1rem auto;
         box-shadow: 10px 10px 10px;
     }
-    #header{
-        display:flex;
-        justify-content: space-between;
-        align-items: flex-start;
-
-        h1{font-size: 1.8rem;}
-        h1, .tagline{
-            white-space: nowrap;
-            margin:0;
-        }
-        .left{text-align:left;}
-        img{
-            float:left;
-            margin: 0 1rem 0 0;
-            width:auto; 
-            height: auto;
-        }
-        .contact{
-            margin-top: 0;
-            text-align:right;
-        }
-    }
-    #content{
-        display:grid;
-        grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
-		height:100%;
-		.position{margin-top: .5rem;}
-	}
+    @include wide-print-header;
+    #content{@include two-columns();}
 	#experience h2{margin-top: 1rem;}
 
 }
 
 @media print{
-    body{background-color: transparent;}
+    * {transition: none !important;}
+    body{
+        background-color: transparent;
+        font-size: .95rem;
+    }
     .resume-wrapper{
         width:100%;
         height:auto;
         margin: 0;
         box-shadow: none;
     }
+    #content{
+        @include two-columns();
+        height: auto;
+    }
     a{
         color: $body-text-color;
-        // text-decoration:none;
     }
    .linkedin{display:none !important;}
    #header .resume{display: block;}
-    *{
-        // background-color:transparent;
-        // color: #000000;
-    }
+   @include wide-print-header;
 }
